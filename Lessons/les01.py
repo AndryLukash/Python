@@ -21,9 +21,14 @@ if answer.lower() == 'y':
     do = int(input("Укажи номер действия: "))
 
     if do == 1:
-        print("В директории ", os.getcwd(), " содержатся файлы: ", os.listdir())
+        print("В директории ", os.getcwd(), " содержатся файлы: ",
+         os.listdir())
     elif do == 2:
-        pass
+        print("Имя ОС:", os.name)
+        print("Процессор содержит", psutil.cpu_count(), "ядер")
+        print("Кодировка файловой системы:", sys.getfilesystemencoding())
+        print("Логин пользователя:", os.getlogin())
+
     elif do == 3:
         print(psutil.pids())
     else:
