@@ -29,17 +29,21 @@ def sys_info():
 def delete_dupl_files(directory):
     delete_files = os.listdir(directory)
     deleted_files_counter = 0
+
     for file in delete_files:
         if file.endswith('.dupl'):
             os.remove(file)
-            deleted_files_counter += 1
+            if not os.path.exists(file):
+                deleted_files_counter += 1
+                print("Файл", file, "был успешно удалён")
+
     return deleted_files_counter
 
 
 print("Project les01 started")
 print("privet")
 
-os.chdir(path=r"Q:\GitHub\Python\Lessons")
+os.chdir(path=r"E:\GitHub\Python\Lessons")
 name = input("Ваше имя: ")
 print(name, " - псина")
 
